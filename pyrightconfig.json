@@ -1,5 +1,5 @@
 {
-  "venvPath": "/Users/elidolney/Desktop/HomeBot",
+  "venvPath": ".",
   "venv": ".venv",
   "typeCheckingMode": "basic",
   "exclude": ["**/.venv/**", "**/__pycache__/**"]

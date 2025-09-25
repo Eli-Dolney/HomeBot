@@ -47,6 +47,6 @@ python3 jarvis.py \
     --stt-compute auto \
     --device-name "MacBook" \
     --enable-tools \
-    --tools-config "tools_m4.yaml" \
+    --tools-config "configs/configs/tools_m4.yaml" \
     --wake off \
     --profile default

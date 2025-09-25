@@ -111,7 +111,7 @@ export TTS_VOICE=""  # Use system default
 
 ### **Configuration Files**
 - `config_m4.yaml` - Mac M4 optimized settings
-- `tools_m4.yaml` - Enhanced Mac-specific tools
+- `configs/tools_m4.yaml` - Enhanced Mac-specific tools
 - `security_config.py` - Privacy and security settings
 
 ## 🔧 Advanced Usage
@@ -128,7 +128,7 @@ python3 jarvis.py --text "What's the weather like?"
 python3 jarvis.py --profile coding --continuous
 
 # With tools enabled
-python3 jarvis.py --enable-tools --tools-config tools_m4.yaml
+python3 jarvis.py --enable-tools --tools-config configs/tools_m4.yaml
 ```
 
 ### **Memory Management**
