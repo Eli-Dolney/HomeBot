@@ -38,7 +38,7 @@ echo "🛑 Press Ctrl+C to stop"
 echo ""
 
 # Start Jarvis with Mac M4 optimized settings
-python3 jarvis.py \
+python3 -m homebot.jarvis \
     --continuous \
     --stream \
     --stt faster \

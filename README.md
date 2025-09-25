@@ -35,7 +35,7 @@ python3 jarvis.py --continuous --stream --stt faster --vad webrtc
 
 Simple web UI (single‑turn, non‑streaming baseline):
 ```bash
-python3 ui.py
+python3 -m homebot.ui
 ```
 
 Tail live transcript logs:

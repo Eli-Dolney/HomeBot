@@ -11,7 +11,7 @@ from typing import List, Dict, Tuple, Optional
 import subprocess
 
 # Reuse backend logic from jarvis.py
-import jarvis  # type: ignore
+from homebot import jarvis  # type: ignore
 
 def simple_chat_interface():
     """Simple command-line chat interface"""

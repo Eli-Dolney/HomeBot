@@ -5,7 +5,7 @@ import gradio as gr
 import speech_recognition as sr
 
 # Reuse backend logic/constants from jarvis.py
-import jarvis  # type: ignore
+from homebot import jarvis  # type: ignore
 
 PROFILES = {
     "default": jarvis.SYSTEM_PROMPT,

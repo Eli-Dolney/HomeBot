@@ -56,7 +56,7 @@ ollama pull llama3.2:3b-instruct-q4_K_M
 ./start_m4.sh
 
 # Enhanced web UI
-python3 ui_enhanced.py
+python3 -m homebot.ui_enhanced
 ```
 
 ## 🎤 Voice Commands
