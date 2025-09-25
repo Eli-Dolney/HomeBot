@@ -1,0 +1,11 @@
+patterns:
+  - name: Open Calculator
+    match: "equals: open calculator"
+    command: open
+    args: ["-a", "Calculator"]
+
+  - name: Open Safari URL
+    match: "startswith: open safari"
+    command: open
+    args: ["-a", "Safari", "{remainder}"]
+

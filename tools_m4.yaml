@@ -1,0 +1,154 @@
+# Mac M4 Enhanced Tools Configuration
+# These tools leverage macOS-specific features and AppleScript integration
+
+patterns:
+  # System Applications
+  - name: Open Calculator
+    match: "equals: open calculator"
+    command: open
+    args: ["-a", "Calculator"]
+
+  - name: Open Safari URL
+    match: "startswith: open safari"
+    command: open
+    args: ["-a", "Safari", "{remainder}"]
+
+  - name: Open Finder
+    match: "equals: open finder"
+    command: open
+    args: ["-a", "Finder"]
+
+  - name: Open System Preferences
+    match: "equals: open system preferences"
+    command: open
+    args: ["-a", "System Preferences"]
+
+  - name: Open Activity Monitor
+    match: "equals: open activity monitor"
+    command: open
+    args: ["-a", "Activity Monitor"]
+
+  # Spotlight Search
+  - name: Spotlight Search
+    match: "startswith: search for"
+    command: osascript
+    args: ["-e", "tell application \"System Events\" to keystroke \" \" using {command down}", "-e", "delay 0.5", "-e", "tell application \"System Events\" to keystroke \"{remainder}\""]
+
+  # Volume Control
+  - name: Set Volume
+    match: "startswith: set volume to"
+    command: osascript
+    args: ["-e", "set volume output volume {remainder}"]
+
+  - name: Mute Volume
+    match: "equals: mute volume"
+    command: osascript
+    args: ["-e", "set volume with output muted"]
+
+  - name: Unmute Volume
+    match: "equals: unmute volume"
+    command: osascript
+    args: ["-e", "set volume without output muted"]
+
+  # Screen Control
+  - name: Lock Screen
+    match: "equals: lock screen"
+    command: osascript
+    args: ["-e", "tell application \"System Events\" to keystroke \"q\" using {command down, control down}"]
+
+  - name: Sleep Display
+    match: "equals: sleep display"
+    command: pmset
+    args: ["displaysleepnow"]
+
+  # Calendar Integration
+  - name: Open Calendar
+    match: "equals: open calendar"
+    command: open
+    args: ["-a", "Calendar"]
+
+  - name: Create Calendar Event
+    match: "startswith: create calendar event"
+    command: osascript
+    args: ["-e", "tell application \"Calendar\" to make new event at calendar 1 with properties {summary:\"{remainder}\", start date:(current date)}"]
+
+  # Notes Integration
+  - name: Open Notes
+    match: "equals: open notes"
+    command: open
+    args: ["-a", "Notes"]
+
+  - name: Create Note
+    match: "startswith: create note"
+    command: osascript
+    args: ["-e", "tell application \"Notes\" to make new note with properties {body:\"{remainder}\"}"]
+
+  # File Operations
+  - name: Show Desktop
+    match: "equals: show desktop"
+    command: osascript
+    args: ["-e", "tell application \"Finder\" to set desktop of startup disk to desktop"]
+
+  - name: Empty Trash
+    match: "equals: empty trash"
+    command: osascript
+    args: ["-e", "tell application \"Finder\" to empty trash"]
+
+  # Network & System Info
+  - name: Show Network Info
+    match: "equals: show network info"
+    command: ifconfig
+    args: []
+
+  - name: Show System Info
+    match: "equals: show system info"
+    command: system_profiler
+    args: ["SPHardwareDataType"]
+
+  # Quick Actions
+  - name: Take Screenshot
+    match: "equals: take screenshot"
+    command: screencapture
+    args: ["-i", "-c"]
+
+  - name: Show Clipboard
+    match: "equals: show clipboard"
+    command: pbpaste
+    args: []
+
+  # Development Tools
+  - name: Open Terminal
+    match: "equals: open terminal"
+    command: open
+    args: ["-a", "Terminal"]
+
+  - name: Open VS Code
+    match: "equals: open code"
+    command: open
+    args: ["-a", "Visual Studio Code"]
+
+  - name: Open Xcode
+    match: "equals: open xcode"
+    command: open
+    args: ["-a", "Xcode"]
+
+  # Media Control
+  - name: Play Music
+    match: "equals: play music"
+    command: osascript
+    args: ["-e", "tell application \"Music\" to play"]
+
+  - name: Pause Music
+    match: "equals: pause music"
+    command: osascript
+    args: ["-e", "tell application \"Music\" to pause"]
+
+  - name: Next Track
+    match: "equals: next track"
+    command: osascript
+    args: ["-e", "tell application \"Music\" to next track"]
+
+  - name: Previous Track
+    match: "equals: previous track"
+    command: osascript
+    args: ["-e", "tell application \"Music\" to previous track"]

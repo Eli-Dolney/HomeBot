@@ -1,0 +1,54 @@
+# Mac M4 Optimized Configuration for Jarvis
+# This configuration is optimized for Apple Silicon Mac M4
+
+# Ollama Configuration
+ollama:
+  host: "http://localhost:11434"
+  model: "llama3.2:3b-instruct-q4_K_M"  # Good balance of speed/quality for M4
+  temperature: 0.7
+  keep_alive: "1h"
+
+# Speech-to-Text (STT) Configuration
+stt:
+  engine: "faster"  # Local Whisper for privacy
+  model_size: "small"  # Good balance for M4
+  compute_type: "int8_float16"  # Optimized for M4 with MPS
+  vad: "webrtc"  # Voice Activity Detection
+  vad_aggressiveness: 2
+
+# Text-to-Speech (TTS) Configuration
+tts:
+  rate_wpm: 185
+  voice: ""  # Use system default
+  language: "en"
+  use_xtts: true  # Enable high-quality voice cloning if available
+
+# Audio Configuration
+audio:
+  device_name: "MacBook"  # Default to MacBook microphone
+  phrase_time_limit: 15.0
+  timeout: 6.0
+
+# Performance Settings
+performance:
+  stream_responses: true  # Enable streaming for better UX
+  continuous_mode: true  # Enable continuous listening
+  wake_word: "stt"  # Use STT-based wake word detection
+
+# Tools Configuration
+tools:
+  enabled: true
+  auto_confirm: false  # Always ask for confirmation
+  config_file: "tools_m4.yaml"
+
+# Logging Configuration
+logging:
+  session_logs: true
+  metrics: true
+  log_dir: "logs"
+  sessions_dir: "sessions"
+
+# Security & Privacy
+security:
+  offline_mode: true  # No external network calls except Ollama
+  data_retention_days: 30

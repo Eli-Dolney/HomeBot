@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# Logs and runtime artifacts
+logs/
+sessions/
+ui_run.log
+jarvis_run.log
+jarvis_live.log
+ui.pid
+
+# Local data/models/cache
+memory/
+*.cache/
+
+# Environment and local config
+.env
+.env.local
+.env.*.local
+config_m4.yaml.local
+tools.local.yaml
+
+# Audio recordings or samples users may add
+*.wav
+*.mp3
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
